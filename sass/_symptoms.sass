@@ -1,0 +1,229 @@
+@use 'base/index' as *
+
+.symptoms
+	position: relative
+	padding-top: 280px!important
+	@media (max-width: 991px)
+		padding-top: 250px!important
+	&::before
+		@include before(-400px)
+		width: 100%
+		height: 1400px
+		background: $symptomsBg
+		z-index: -3
+	&__block__img
+		position: relative
+		width: 800px
+		height: 434px
+		margin: 0 auto
+		@media (max-width: 1125px)
+			width: 726px
+		@media (max-width: 768px)
+			width: 100%
+		@media (max-width: 676px)
+			margin-left: 30px
+		@media (max-width: 600px)
+			margin-left: 0
+		@media (max-width: 525px)
+			margin-left: -30px
+		@media (max-width: 480px)
+			margin-left: -50px
+		@media (max-width: 425px)
+			margin-left: -60px
+		@media (max-width: 400px)
+			margin-left: -75px
+		@media (max-width: 375px)
+			margin-left: -90px
+	&__img
+		@include absolute(0, 80px)
+		width: 260px
+		height: 160px
+		transition: .5s
+		@media (max-width: 1125px)
+			width: 200px
+			height: 120px
+		@media (max-width: 700px)
+			left: 80px
+		@media (max-width: 600px)
+			width: 165px
+			height: 100px
+		@media (max-width: 480px)
+			width: 150px
+			height: 90px
+			left: 120px
+		&_second
+			top: 117px
+			left: 156px
+			z-index: -1
+			@media (max-width: 700px)
+				left: 100px
+			@media (max-width: 676px)
+				left: 80px
+			@media (max-width: 600px)
+				left: 100px
+			@media (max-width: 480px)
+				left: 140px
+		&_third
+			top: 222px
+			left: 0
+			z-index: -2
+			@media (max-width: 768px)
+				left: 80px
+			@media (max-width: 700px)
+				left: 50px
+			@media (max-width: 676px)
+				top: 230px
+				left: 60px
+			@media (max-width: 480px)
+				left: 100px
+		&_four
+			left: 438px
+			z-index: -1
+			@media (max-width: 676px)
+				left: 300px
+			@media (max-width: 480px)
+				left: 280px
+		&_five
+			top: 120px
+			left: 356px
+			@media (max-width: 676px)
+				left: 300px
+			@media (max-width: 600px)
+				left: 280px
+			@media (max-width: 480px)
+				left: 240px
+		&_six
+			top: 250px
+			left: 264px
+			z-index: -1
+			@media (max-width: 676px)
+				left: 200px
+			@media (max-width: 480px)
+				left: 180px
+		&_seven
+			top: 197px
+			left: 532px
+			z-index: -2
+			@media (max-width: 768px)
+				left: 460px
+			@media (max-width: 676px)
+				top: 215px
+				left: 330px
+			@media (max-width: 480px)
+				left: 280px
+		&_preparat
+			top: 50%
+			left: 50%
+			transform: translate(-30%, -60%)
+			width: 500px
+			height: 500px
+			@media (max-width: 1125px)
+				width: 400px
+				height: 400px
+				top: 40%
+			@media (max-width: 991px)
+				width: 370px
+			@media (max-width: 676px)
+				width: 350px
+				height: 350px
+				top: 35%
+				left: 46%
+			@media (max-width: 600px)
+				left: 52%
+			@media (max-width: 576px)
+				width: 315px
+			@media (max-width: 525px)
+				width: 280px
+				left: 58%
+			@media (max-width: 480px)
+				width: 350px
+			@media (max-width: 450px)
+				left: 70%
+			@media (max-width: 375px)
+				left: 82%
+			img
+				object-fit: contain
+			&_second
+				width: 700px
+				height: 382px
+				top: -100px
+				@media (max-width: 1125px)
+					width: 500px
+					height: auto
+				@media (max-width: 991px)
+					height: 450px
+					left: 48%
+				@media (max-width: 768px)
+					width: 400px
+					height: 350px
+					top: -60px
+					left: 60%
+				@media (max-width: 700px)
+					left: 58%
+				@media (max-width: 676px)
+					width: 350px
+					height: 350px
+					top: -100px
+					left: 52%
+				@media (max-width: 600px)
+					width: 320px
+					left: 57%
+				@media (max-width: 576px)
+					width: 315px
+				@media (max-width: 525px)
+					width: 280px
+					left: 64%
+				@media (max-width: 480px)
+					width: 350px
+					top: -200px
+					left: 50%
+				@media (max-width: 375px)
+					top: -160px
+					width: 300px
+					left: 58%
+			&_sun
+				width: 294px
+				height: 208px
+				top: -120px
+				left: 92%
+				@media (max-width: 1125px)
+					width: 250px
+					height: 180px
+					left: 85%
+				@media (max-width: 991px)
+					width: 180px
+					top: -25px
+					left: 78%
+				@media (max-width: 768px)
+					width: 150px
+					top: -30px
+					left: 88%
+				@media (max-width: 700px)
+					left: 86%
+				@media (max-width: 676px)
+					width: 120px
+					top: -65px
+					left: 78%
+				@media (max-width: 600px)
+					top: -50px
+					left: 85%
+				@media (max-width: 576px)
+					left: 86%
+				@media (max-width: 525px)
+					width: 100px
+					left: 92%
+				@media (max-width: 480px)
+					top: -160px
+					width: 140px
+					left: 88%
+				@media (max-width: 450px)
+					left: 92%
+				@media (max-width: 400px)
+					left: 95%
+				@media (max-width: 375px)
+					width: 120px
+					top: -110px
+					left: 100%
+	&__wrapper
+		position: relative
+		top: 200px

@@ -1,0 +1,37 @@
+@use '../base/index' as *
+
+.news
+	position: relative
+	&_page
+		@media (max-width: 425px)
+			margin-top: 16px
+		@media (max-width: 375px)
+			margin-top: 32px
+		&::before
+			transform: rotate(-180deg)
+			@include before(-300px)
+			width: 100%
+			height: 850px
+			background: $newsBg
+			z-index: -3
+		.cards
+			&__wrapper
+				@media (max-width: 1199px)
+					flex-direction: column
+					align-items: center
+					gap: 64px
+				@media (max-width: 425px)
+					gap: 48px
+			&__item
+				@media (max-width: 1199px)
+					width: 50%
+				@media (max-width: 991px)
+					width: 65%
+				@media (max-width: 768px)
+					width: 80%
+				@media (max-width: 576px)
+					width: 100%
+	&_main
+		padding-top: 80px
+		@media (max-width: 425px)
+			padding-top: 48px

@@ -1,0 +1,65 @@
+@use '../base/index' as *
+
+.preparat
+	min-height: auto
+	&__wrapper
+		position: relative
+		height: 260px
+		@media (max-width: 480px)
+			height: 200px
+		@media (max-width: 425px)
+			height: 150px
+		@media (max-width: 375px)
+			height: 120px
+	&__top, &__bottom
+		@include absolute(50%, -10px)
+		width: 102%
+		height: 90px
+		padding: 32px
+		@include flexCenter(space-between)
+		box-shadow: 0 4px 20px 0 $secondShadow
+		background: $preparatTopLinearGradientBg
+		@media (max-width: 991px)
+			width: 103%
+			height: 80px
+		@media (max-width: 525px)
+			width: 104%
+		@media (max-width: 768px)
+			padding: 16px
+			height: 70px
+		@media (max-width: 676px)
+			height: 60px
+		@media (max-width: 480px)
+			height: 50px
+		@media (max-width: 425px)
+			width: 105%
+			height: 40px
+	&__top
+		transform: rotate(5deg) translateY(-50%)
+	&__bottom
+		transform: rotate(-5deg) translateY(-50%)
+		background: $preparatBottomLinearGradientBg
+	&__item
+		font-weight: 900
+		font-size: 24px
+		text-align: center
+		text-transform: uppercase
+		color: $secondColor
+		@media (max-width: 1199px)
+			font-size: 22px
+		@media (max-width: 991px)
+			font-size: 16px
+		@media (max-width: 768px)
+			font-size: 15px
+		@media (max-width: 676px)
+			font-size: 13px
+		@media (max-width: 576px)
+			font-size: 12px
+		@media (max-width: 525px)
+			font-size: 11px
+		@media (max-width: 480px)
+			font-size: 9px
+		@media (max-width: 425px)
+			font-size: 8px
+		&_bottom
+			color: $mainColor

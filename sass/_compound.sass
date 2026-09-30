@@ -1,0 +1,148 @@
+@use 'base/index' as *
+
+.compound
+	position: relative
+	padding: 180px 0 128px 0
+	@media (max-width: 1199px)
+		padding: 128px 0!important
+	@media (max-width: 991px)
+		padding-bottom: 0!important
+	@media (max-width: 576px)
+		padding-top: 100px!important
+	@media (max-width: 375px)
+		padding-top: 80px!important
+	&::before
+		@include before(200px)
+		width: 100%
+		height: 820px
+		background: $compaundBeforeLinearGradientBg
+		z-index: -1
+		@media (max-width: 1650px)
+			top: 100px
+		@media (max-width: 600px)
+			height: 600px
+			top: 200px
+		@media (max-width: 576px)
+			top: 150px
+		@media (max-width: 425px)
+			top: 125px
+		@media (max-width: 375px)
+			top: 105px
+	&::after
+		width: 800px
+		height: 350px
+		@include before(410px, 50%)
+		transform: translateX(-50%)
+		background: $compaundAfterLinearGradientBg
+		z-index: -1
+		@media (max-width: 1650px)
+			top: 340px
+		@media (max-width: 1199px)
+			top: 320px
+		@media (max-width: 991px)
+			top: 280px
+		@media (max-width: 768px)
+			width: 100%
+			height: 300px
+			top: 310px
+		@media (max-width: 600px)
+			height: 280px
+		@media (max-width: 576px)
+			top: 315px
+		@media (max-width: 525px)
+			top: 300px
+		@media (max-width: 480px)
+			height: 250px
+		@media (max-width: 450px)
+			height: 220px
+			top: 310px
+		@media (max-width: 425px)
+			top: 320px
+			height: 250px
+		@media (max-width: 375px)
+			top: 270px
+	&__wrapper
+		position: relative
+		margin-top: 32px
+		@include flexReverseAxis
+		align-items: center
+		@media (max-width: 768px)
+			margin-top: 64px
+		@media (max-width: 375px)
+			margin-top: 32px
+	&__img
+		margin-top: 200px
+		@include absolute
+		width: 100%
+		height: 222px
+		transition: .5s
+		pointer-events: none
+		@media (max-width: 1650px)
+			margin-top: 120px
+		@media (max-width: 1199px)
+			margin-top: 150px
+		@media (max-width: 991px)
+			height: 200px
+			margin-top: 120px
+		@media (max-width: 800px)
+			height: 180px
+		@media (max-width: 768px)
+			height: 160px
+		@media (max-width: 600px)
+			height: 140px
+		@media (max-width: 576px)
+			margin-top: 150px
+		@media (max-width: 525px)
+			height: 120px
+		@media (max-width: 450px)
+			height: 100px
+		@media (max-width: 425px)
+			height: auto!important
+		&_second
+			width: 100%
+			height: 400px
+			top: -90px
+			@media (max-width: 991px)
+				height: 380px
+			@media (max-width: 800px)
+				height: 350px
+			@media (max-width: 768px)
+				height: 320px
+			@media (max-width: 600px)
+				top: -85px
+			@media (max-width: 576px)
+				top: -90px
+			@media (max-width: 525px)
+				top: -100px
+			@media (max-width: 450px)
+				height: 300px
+			@media (max-width: 425px)
+				top: -65px
+				height: 280px!important
+			@media (max-width: 400px)
+				height: 250px!important
+				top: -55px
+		&_third
+			height: 428px
+			top: -85px
+			@media (max-width: 991px)
+				height: 400px
+			@media (max-width: 800px)
+				height: 350px
+			@media (max-width: 768px)
+				height: 320px
+				top: -70px
+			@media (max-width: 600px)
+				top: -80px
+			@media (max-width: 525px)
+				top: -90px
+			@media (max-width: 480px)
+				height: 300px
+				width: 105%
+				left: -15px
+			@media (max-width: 425px)
+				top: 10px
+		img
+			object-fit: contain
+			@media (max-width: 425px)
+				object-fit: cover

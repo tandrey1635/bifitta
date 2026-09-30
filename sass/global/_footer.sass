@@ -1,0 +1,132 @@
+@use '../base/index' as *
+
+.footer
+	position: relative
+	padding: 64px 0
+	min-height: 372px
+	@media (max-width: 425px)
+		padding: 32px 0
+	&_news
+		padding-top: 96px
+		@media (max-width: 425px)
+			padding-top: 64px
+	&::before, &::after
+		@include universalBeforeAfter
+		width: 940px
+		height: 940px
+		bottom: -300px
+		z-index: -1
+		border-radius: 100%
+	&::before
+		left: -100px
+		background: $footerBeforeLinearGradientBg
+		@media (max-width: 1199px)
+			width: 150%
+			height: 1200px
+			left: -25%
+			bottom: -100px
+		@media (max-width: 991px)
+			height: 1500px
+			bottom: -200px
+		@media (max-width: 480px)
+			bottom: -250px
+		@media (max-width: 425px)
+			height: 1200px
+			bottom: -200px
+		@media (max-width: 375px)
+			bottom: -250px
+	&::after
+		right: -100px
+		background: $footerAfterLinearGradientBg
+		@media (max-width: 1199px)
+			display: none
+	&__hr
+		height: 2px
+		background: $footerHrBg
+		border-radius: 10px
+	&__top
+		margin-top: 36px
+	&__logo
+		&_bottom
+			width: 152px
+			height: 80px
+			@media (max-width: 991px)
+				width: 30%
+				height: auto
+			@media (max-width: 576px)
+				width: 50%
+	&__wrapper, &__menu
+		@include flexCenter(space-between)
+	&__wrapper
+		@media (max-width: 1199px)
+			@include flexReverseAxis
+			gap: 32px
+		@media (max-width: 425px)
+			gap: 16px
+	&__menu
+		@media (max-width: 991px)
+			display: none
+	&__nav
+		width: 70%
+		@media (max-width: 991px)
+			width: 100%
+	&__list
+		font-weight: 600
+		&_wherebuy
+			@include flexCenter
+			text-transform: uppercase
+			font-weight: 700
+			font-size: 18px
+			background: $btnBg
+			border-radius: 56px
+			width: 168px
+			padding: 12px
+	&__center
+		margin: 52px 0
+		text-align: center
+		text-transform: uppercase
+		font-family: $thirdFont
+		font-size: 24px
+		letter-spacing: 2.52px
+		transform: scaleY(2.2)
+		color: $textSecondColor
+		opacity: .2
+		@media (max-width: 991px)
+			margin: 72px 0
+		@media (max-width: 576px)
+			transform: scaleY(1.8)
+		@media (max-width: 480px)
+			margin: 56px 0
+			font-size: 22px
+			transform: scaleY(1.6)
+		@media (max-width: 425px)
+			transform: scaleY(1.4)
+			font-size: 20px
+			margin: 48px 0
+		@media (max-width: 375px)
+			font-size: 18px
+			margin: 32px 0
+	&__text, &__bottom__link
+		color: $textSecondColor
+		line-height: 150%
+		@media (max-width: 991px)
+			text-align: center
+	&__text
+		&_copyright
+			font-family: $secondFont
+	&__bottom
+		margin-top: 32px
+		&__link
+			font-weight: 700
+			text-decoration: underline
+	&__btn
+		padding: 16px
+		width: 302px
+		font-weight: 700
+		color: $textSecondColor
+		text-align: center
+		border-radius: 42px
+		background: transparent
+		border: 0.90px solid $mainBorder
+		@media (max-width: 425px)
+			padding: 10px

@@ -1,0 +1,51 @@
+@use '../base/index' as *
+
+.cards
+	margin-top: 64px
+	@media (max-width: 425px)
+		margin-top: 32px
+	&_news-details
+		@media (max-width: 425px)
+			margin-top: 64px
+	&__wrapper
+		@include flexHorisontalCenter(space-between)
+	&__item
+		padding: 42px 34px 0
+		@include flexReverseAxis
+		width: 32%
+		gap: 20px
+		min-height: 400px
+		align-items: center
+		background: $cardBorder
+		border: 2px solid transparent
+		box-shadow: 5px 9px 19px 0 $mainShadow
+		border-radius: 45px
+		backdrop-filter: blur(45px)
+		@media (max-width: 425px)
+			padding: 32px 32px 0
+			border-radius: 32px
+		@media (max-width: 375px)
+			padding: 24px 24px 0
+			border-radius: 24px
+	&__top
+		width: 100%
+		height: 200px
+		border-radius: 24px
+		@media (max-width: 1199px)
+			height: auto
+	&__img
+		height: inherit
+		border-radius: inherit
+	&__center
+		flex-grow: 1
+	&__description
+		@include flexReverseAxis
+		align-items: center
+		gap: 16px
+	&__header
+		font-weight: 700
+		font-size: 18px
+	&__text
+		color: $textColor
+	&__bottom
+		transform: translateY(25px)

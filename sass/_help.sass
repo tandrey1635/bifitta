@@ -1,0 +1,213 @@
+@use 'base/index' as *
+
+.help
+	position: relative
+	padding-top: 187px
+	@media (max-width: 991px)
+		padding-top: 150px!important
+	@media (max-width: 425px)
+		padding-top: 100px!important
+	@media (max-width: 375px)
+		padding-top: 80px!important
+	&::before
+		@include before(0, -100px)
+		width: 574px
+		height: 1251px
+		background: $helpBeforeLinearGradientBg
+		z-index: -1
+		@media (max-width: 1199px)
+			top: unset
+			bottom: -200px
+	&::after
+		@include after(0px, -500px)
+		width: 150%
+		height: 1000px
+		background: $helpAfterBg
+		z-index: -2
+		@media (max-width: 1199px)
+			top: -100px
+			z-index: -1
+	&::before, &::after
+		@media (max-width: 1199px)
+			width: 200%
+			height: 1500px
+			left: -50%
+		@media (max-width: 425px)
+			height: 1400px
+		@media (max-width: 375px)
+			height: 1200px
+	&__wrapper
+		@include flexHorisontalCenter(space-between)
+		@media (max-width: 1199px)
+			flex-direction: column-reverse
+			align-items: center
+			gap: 48px
+		@media (max-width: 425px)
+			gap: 32px
+		&::before
+			width: 100%
+			height: 900px
+			@include before(700px)
+			@include background('img/scheme-bg.svg')
+			@media (max-width: 1199px)
+				top: 1600px
+				height: 700px
+			@media (max-width: 1024px)
+				top: 1550px
+			@media (max-width: 991px)
+				top: 1500px
+			@media (max-width: 768px)
+				top: 1450px
+			@media (max-width: 676px)
+				top: 1350px
+			@media (max-width: 576px)
+				top: 1100px
+			@media (max-width: 525px)
+				top: 1050px
+			@media (max-width: 480px)
+				top: 1024px
+			@media (max-width: 450px)
+				top: 1000px
+			@media (max-width: 425px)
+				top: 870px
+			@media (max-width: 400px)
+				top: 850px
+			@media (max-width: 375px)
+				top: 815px
+	&__left
+		position: relative
+		width: 48%
+		height: 754px
+		@media (max-width: 1199px)
+			width: 100%
+			height: 1000px
+		@media (max-width: 768px)
+			height: 900px
+		@media (max-width: 676px)
+			height: 800px
+		@media (max-width: 576px)
+			height: auto
+		&::before
+			@include before(40px, -30px)
+			width: 514px
+			height: 344px
+			@include background('img/help-bg.png')
+			animation: float 3s ease-in-out infinite
+			@media (max-width: 1199px)
+				width: 750px
+				height: 500px
+				top: -40px
+				left: 45%
+				transform: translateX(-50%)
+			@media (max-width: 800px)
+				left: 48%
+			@media (max-width: 768px)
+				left: 50%
+				width: 100%
+				height: 500px
+			@media (max-width: 700px)
+				height: 450px
+			@media (max-width: 676px)
+				height: 430px
+			@media (max-width: 600px)
+				height: 380px
+			@media (max-width: 576px)
+				height: 370px
+			@media (max-width: 525px)
+				height: 330px
+			@media (max-width: 480px)
+				height: 300px
+			@media (max-width: 450px)
+				height: 280px
+			@media (max-width: 425px)
+				height: 270px
+				top: 0
+				left: 48%
+				animation: none
+			@media (max-width: 400px)
+				height: 250px
+			@media (max-width: 375px)
+				height: 230px
+	&__right
+		width: 42.5%
+		@media (max-width: 1199px)
+			width: 100%
+			height: 600px
+		@media (max-width: 576px)
+			height: 500px
+		@media (max-width: 425px)
+			height: 450px
+	&__menu
+		margin-top: 64px
+		display: grid
+		gap: 30px
+		@media (max-width: 1199px)
+			justify-items: center
+		@media (max-width: 425px)
+			margin-top: 32px
+	&__list
+		min-height: 95px
+		font-weight: 700
+		font-size: 24px
+		border-radius: 45px
+		background: $helpBorder
+		border: 2px solid transparent
+		transition: .5s
+		@media (max-width: 1199px)
+			width: 50%
+		@media (max-width: 1024px)
+			width: 65%
+		@media (max-width: 800px)
+			width: 80%
+		@media (max-width: 676px)
+			width: 100%
+		@media (max-width: 525px)
+			font-size: 22px
+		@media (max-width: 480px)
+			min-height: 85px
+			font-size: 20px
+			border-radius: 32px
+		@media (max-width: 425px)
+			font-size: 17.2px
+			min-height: 70px
+		@media (max-width: 375px)
+			font-size: 16px
+	&__item
+		@include flexVerticalCenter
+		padding: 20px
+		padding-left: 40px
+		position: relative
+		min-height: inherit
+		@media (max-width: 480px)
+			width: 90%
+			padding-left: 20px!important
+		@media (max-width: 425px)
+			padding: 10px
+		&:before
+			width: 49px
+			height: 46px
+			@include after(20px, 20px)
+			@include background('icons/ok-icon.svg', contain)
+			z-index: 2
+			@media (max-width: 525px)
+				width: 45px
+				height: 40px
+			@media (max-width: 480px)
+				width: 35px
+				right: -20px
+			@media (max-width: 425px)
+				top: 10px
+		&::after
+			width: 68px
+			height: 68px
+			@include after(50%, 20px)
+			transform: translateY(-50%)
+			background: $mainBg
+			border-radius: 50%
+			@media (max-width: 525px)
+				width: 55px
+				height: 55px
+			@media (max-width: 480px)
+				width: 45px
+				height: 45px
+				right: -20px

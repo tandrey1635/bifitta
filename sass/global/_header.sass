@@ -1,0 +1,92 @@
+@use '../base/index' as *
+
+.header
+	position: sticky
+	top: 0
+	z-index: 10
+	@media (max-width: 991px)
+		min-height: auto
+	&__main__wrapper
+		padding: 32px 52px
+		backdrop-filter: blur(45px)
+		box-shadow: 0 11px 16px $headerShadow
+		border-radius: 0 0 45px 45px
+		background: $headerBg
+		gap: 16px
+		@media (max-width: 1199px)
+			padding: 32px
+		@media (max-width: 991px)
+			padding: 0
+		@media (max-width: 425px)
+			border-radius: 0 0 30px 30px
+	&__main__wrapper, &__wrapper, &__menu
+		@include flexCenter(space-between)
+	&__wrapper
+		width: 80%
+		gap: 16px
+		@media (max-width: 1125px)
+			width: 70%
+		@media (max-width: 1024px)
+			width: 75%
+		@media (max-width: 991px)
+			padding: 15px 0
+			@include absolute(-20dvh, -5%)
+			flex-direction: column
+			justify-content: center
+			width: 110%
+			height: 100dvh
+			z-index: -1
+			opacity: 0
+			pointer-events: none
+			transition: .3s all
+			background: $secondBg
+			box-shadow: 0 3px 4px 0 $headerShadow
+			backdrop-filter: blur(11.25px)
+		&.header__mobile__active
+			top: 0
+			opacity: 1
+			pointer-events: all
+			transition: .3s all
+	&__left
+		@media (max-width: 991px)
+			display: inline-flex
+			width: 100%
+			padding: 32px 52px
+			box-shadow: 0 11px 16px $headerShadow
+			border-radius: inherit
+		@media (max-width: 576px)
+			padding: 24px
+		@media (max-width: 425px)
+			padding: 16px
+		@media (max-width: 375px)
+			padding: 14px
+	&__nav
+		min-width: 600px
+		@media (max-width: 1125px)
+			min-width: auto
+	&__menu
+		@media (max-width: 1125px)
+			gap: 12px
+		@media (max-width: 991px)
+			flex-direction: column
+			width: auto
+			height: 500px
+			justify-content: space-evenly
+	&__list
+		font-weight: 600
+		@media (max-width: 991px)
+			font-weight: 700
+	&__link
+		@media (max-width: 425px)
+			font-size: 16px!important
+		@media (max-width: 375px)
+			font-size: 14px!important
+		&_wherebuy
+			@include flexCenter
+			text-transform: uppercase
+			font-weight: 700
+			font-size: 18px
+			background: $btnBg
+			border-radius: 56px
+			width: 168px
+			padding: 12px

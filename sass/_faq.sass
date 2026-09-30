@@ -1,0 +1,22 @@
+@use 'base/index' as *
+
+.faq
+	padding-top: 46px
+	position: relative
+	@media (max-width: 991px)
+		min-height: auto
+	@media (max-width: 425px)
+		padding-top: 32px
+	&::before
+		@include before
+		width: 100%
+		height: 1800px
+		background: $faqBg
+		z-index: -1
+	&__divider
+		color: $breadcrumbsBg
+	&__block__btn
+		margin-top: 64px
+		@include flexCenter
+		@media (max-width: 425px)
+			margin-top: 48px

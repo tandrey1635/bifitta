@@ -1,0 +1,68 @@
+@use '../base/index' as *
+
+.breadcrumbs
+	padding: 64px 0
+	@media (max-width: 576px)
+		padding: 56px 0
+	@media (max-width: 480px)
+		padding: 48px 0
+	@media (max-width: 425px)
+		padding: 32px 0
+	@media (max-width: 375px)
+		padding: 32px 0 0
+	&_news__details
+		@media (max-width: 375px)
+			padding: 32px 0
+	&__wrapper
+		padding: 0 52px
+		@include flexVerticalCenter
+		@media (max-width: 425px)
+			padding: 0 32px
+		&_news__details
+			@media (max-width: 768px)
+				padding: 0 32px
+	&__menu
+		@include flexVerticalCenter
+		flex-wrap: wrap
+		gap: 15px
+	&__list
+		@include flexVerticalCenter
+		position: relative
+		font-size: 20px
+		line-height: 24px
+		font-weight: 600
+		@media (max-width: 425px)
+			font-size: 18px
+		@media (max-width: 375px)
+			font-size: 16px
+		&:first-child
+			text-transform: uppercase
+			font-weight: 900
+		&:not(:last-child)
+			&::after
+				content: '/'
+				margin-left: 15px
+				font-weight: bold
+				color: $breadcrumbsBg
+		&_current
+			&:first-child
+				text-transform: none
+				font-weight: 400
+	&__link
+		&_news__details
+			@media (max-width: 375px)
+				font-size: 14px
+		&_back
+			margin-left: 20px
+			@media (max-width: 768px)
+				margin-left: 0
+			&::before
+				@include before
+				width: 14px
+				height: 26px
+				@include background('icons/arrow-back.svg')
+				@media (max-width: 768px)
+					left: -20px
+				@media (max-width: 375px)
+					height: 20px
+					top: 2px

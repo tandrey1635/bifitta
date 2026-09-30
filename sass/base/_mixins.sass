@@ -1,0 +1,118 @@
+/* Flex */
+@mixin flexCenter($justifyContent: center, $alignItems: center)
+	display: flex
+	justify-content: $justifyContent
+	align-items: $alignItems
+
+@mixin flexHorisontalCenter($justifyContent: center)
+	display: flex
+	justify-content: $justifyContent
+
+@mixin flexVerticalCenter($alignItems: center)
+	display: flex
+	align-items: $alignItems
+
+@mixin flexReverseAxis($flexDirection: column)
+	display: flex
+	flex-direction: $flexDirection
+
+
+/* Grid */
+/* Прижать подвал Грид */
+@mixin gridFooter
+	display: grid
+	grid-template-columns: minmax(0, 1fr)
+	grid-template-rows: auto 1fr
+
+@mixin gridGap($gap: unset)
+	display: grid
+	gap: $gap
+
+
+/* Backgrounds */
+@mixin background($background, $size: cover)
+	background: url($background) no-repeat center / $size
+
+@mixin doubleBackground($background, $size: cover, $bgColor)
+	background: url($background) no-repeat center / $size, $bgColor
+
+@mixin doubleBackgroundImg($background-one, $size-one: cover, $background-two, $size-two: cover)
+	background: url($background-one) no-repeat center / $size-one, url($background-two) no-repeat center / $size-two
+
+
+/* Mask-img */
+@mixin mask($mask, $size: cover)
+	mask-image: url($mask)
+	mask-position: center
+	mask-repeat: no-repeat
+	mask-size: $size
+
+
+/* Before, After */
+@mixin before($top: 0, $left: 0)
+	display: flex
+	position: absolute
+	content: ''
+	top: $top
+	left: $left
+
+@mixin after($top: 0, $right: 0)
+	display: flex
+	position: absolute
+	content: ''
+	top: $top
+	right: $right
+
+@mixin universalBeforeAfter($top: unset, $left: unset, $bottom: unset, $right: unset)
+	display: flex
+	position: absolute
+	content: ''
+	top: $top
+	left: $left
+	bottom: $bottom
+	right: $right
+
+
+/* Absolute */
+@mixin absolute($top: 0, $left: 0)
+	position: absolute
+	top: $top
+	left: $left
+
+@mixin absoluteRight($top: 0, $right: 0)
+	position: absolute
+	top: $top
+	right: $right
+
+@mixin absoluteBottomRight($bottom: 0, $right: 0)
+	position: absolute
+	bottom: $bottom
+	right: $right
+
+@mixin absoluteCenter($top: 0, $left: 50%, $transformX: -50%)
+	position: absolute
+	top: $top
+	left: $left
+	transform: translateX($transformX)
+
+@mixin universalAbsolute($top: unset, $left: unset, $bottom: unset, $right: unset)
+	position: absolute
+	top: $top
+	left: $left
+	bottom: $bottom
+	right: $right
+
+
+/* Адаптивный шрифт */
+@mixin adaptiveFont($minFont, $maxFont, $minWidth: 375px, $maxWidth: 1920px)
+	font-size: clamp(#{$minFont}, calc(#{$minFont} + (#{$maxFont} - #{$minFont}) * ((100vw - #{$minWidth}) / (#{$maxWidth} - #{$minWidth}))), #{$maxFont})
+	// $minFont - минимальный размер шрифта, $maxFont - максимальный размер шрифта,
+	// $minWidth - минимальный размер экрана, $maxWidth - максимальный размер экрана
+	// clamp() ограничивает рост:
+	// Меньше $minFont не станет
+	// Больше $maxFont не вырастет
+	// Теперь растягиваться шрифт не будет, если надо чтобы дальше растягивалось убрать функцию clamp($minFont - 1 вая переменная и $maxFont - последняя переменная)
+	// Если нужно чтобы увеличивалось для экранов выше 1920 - меняем на большее значение
+	// Если нужно чтобы шрифт продолжал расти на экранах > $maxWidth:
+	// Убрать clamp(), оставить только calc()
+	// Если нужно увеличить диапазон: изменить $maxWidth: 2560px и выше

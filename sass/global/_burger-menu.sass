@@ -1,0 +1,73 @@
+@use '../base/index' as *
+
+.burger__menu
+	display: none
+	@media (max-width: 991px)
+		@include absoluteRight(50%, 32px)
+		@include flexCenter(space-evenly)
+		width: 80px
+		height: 30px
+		transform: translateY(-50%)
+		z-index: 10
+		background: $mainBg
+		border-radius: 20px
+		transition: .5s
+	@media (max-width: 576px)
+		width: 70px
+		right: 24px
+	@media (max-width: 425px)
+		width: 50px
+		height: 20px
+		border-radius: 10px
+		right: 16px
+	@media (max-width: 375px)
+		right: 14px
+	&__line
+		position: relative
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		background: $secondBg
+		@media (max-width: 425px)
+			width: 8px
+			height: 8px
+		@media (max-width: 375px)
+			width: 6px
+			height: 6px
+	&.active__menu
+		width: 50px
+		height: 50px
+		flex-direction: column
+		background: transparent
+		border-radius: 0
+		@media (max-width: 676px)
+			width: 40px
+			height: 40px
+		@media (max-width: 425px)
+			width: 30px
+			height: 30px
+		@media (max-width: 375px)
+			width: 20px
+			height: 20px
+	.active__line
+		width: 100%
+		height: 2px
+		background: $mainBg
+		border-radius: 0
+		transition: .5s
+		&:first-child
+			top: 8px
+			transform: rotate(45deg)
+			@media (max-width: 425px)
+				top: 6px
+			@media (max-width: 375px)
+				top: 4px
+		&:nth-child(2)
+			display: none
+		&:last-child
+			top: -10px
+			transform: rotate(-45deg)
+			@media (max-width: 676px)
+				top: -6px
+			@media (max-width: 425px)
+				top: -4px

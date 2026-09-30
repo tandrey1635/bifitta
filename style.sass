@@ -1,0 +1,97 @@
+@use 'sass/base/reset'
+@use 'sass/base/index' as *
+
+
+@use 'sass/global/flex-footer'
+@use 'sass/global/titles'
+@use 'sass/global/text'
+@use 'sass/global/btns'
+@use 'sass/animation'
+
+
+@use 'sass/global/burger-menu'
+@use 'sass/global/header'
+@use 'sass/global/promo'
+@use 'sass/global/breadcrumbs-link'
+@use 'sass/global/preparat'
+@use 'sass/symptoms'
+@use 'sass/compound'
+@use 'sass/help'
+@use 'sass/gsap'
+@use 'sass/scheme'
+@use 'sass/faq'
+@use 'sass/global/accordeon'
+@use 'sass/news/news'
+@use 'sass/news-details/news-details'
+@use 'sass/news-details/about-news'
+@use 'sass/news-details/list-of-sources'
+@use 'sass/global/card'
+@use 'sass/global/swiper'
+@use 'libs/uteka/uteka'
+@use 'sass/global/where-buy'
+@use 'sass/bibliography'
+@use 'sass/global/footer'
+
+
+html
+	scroll-behavior: smooth!important
+
+.wrapper
+	overflow: clip
+	position: relative
+	&::before, &::after
+		z-index: -1
+		border-radius: 100%
+	&::before
+		width: 1230px
+		height: 485px
+		@include before(-100px, -100px)
+		background: $headerBeforeLinearGradientBg
+	&::after
+		width: 1400px
+		height: 562px
+		@include after(-100px, -100px)
+		background: $headerAfterLinearGradientBg
+	&_wherebuy
+		&::before
+			@include before(-85px, -220px)
+			width: 1377px
+			height: 400px
+			@media (max-width: 991px)
+				width: 100%
+				height: 1500px
+			@media (max-width: 576px)
+				width: 120%
+			@media (max-width: 480px)
+				width: 130%
+			@media (max-width: 425px)
+				height: 700px
+		&::after
+			@include after(-85px, -220px)
+			width: 1300px
+			height: 924px
+			background: $headerWhereBuyAfterLinearGradientBg
+			z-index: -2
+			@media (max-width: 991px)
+				width: 100%
+				height: 1500px
+			@media (max-width: 576px)
+				width: 120%
+			@media (max-width: 480px)
+				width: 130%
+			@media (max-width: 425px)
+				height: 700px
+	&_news__details
+		&::before, &::after
+			display: none
+
+body
+	font-family: $mainFont
+	color: $mainColor
+	&.overflow
+		overflow: hidden
+
+.container
+	max-width: 1200px
+	padding: 0 15px
+	margin: 0 auto

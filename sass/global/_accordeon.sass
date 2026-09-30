@@ -1,0 +1,94 @@
+@use '../base/index' as *
+
+.accordeon
+	display: none
+	padding: 40px 68px
+	width: 1050px
+	min-height: 30px
+	margin: 0 auto
+	border-radius: 45px
+	backdrop-filter: blur(45px)
+	box-shadow: 5px 9px 19px 0 $mainShadow
+	background: $accordeonBorder
+	border: 2px solid transparent
+	@media (max-width: 1400px)
+		width: 100%
+	@media (max-width: 991px)
+		padding: 32px 48px
+	@media (max-width: 480px)
+		padding: 32px
+		border-radius: 30px
+	@media (max-width: 425px)
+		padding: 24px
+		min-height: auto
+	@media (max-width: 375px)
+		padding: 16px
+		border-radius: 20px
+	&_news__details
+		display: block
+		&::before
+			@include before(50px, -85px)
+			@include background('img/news-details/list-of-sources-bg-left.png')
+		&::after
+			@include after(-100px, -50px)
+			@include background('img/news-details/list-of-sources-bg-right.png')
+		&::before, &::after
+			width: 85px
+			height: 120px
+			z-index: -1
+			@media (max-width: 1350px)
+				display: none
+	&__wrapper
+		margin-top: 48px
+		@include flexReverseAxis
+		gap: 40px
+	&__item
+		min-height: inherit
+		position: relative
+		cursor: pointer
+		&::after
+			width: 20px
+			height: 20px
+			@include after(-6px, -42px)
+			@include background('icons/accordeon-icon.svg', contain)
+			@media (max-width: 991px)
+				right: -30px
+			@media (max-width: 480px)
+				right: -20px
+			@media (max-width: 425px)
+				top: 50%
+				transform: translateY(-50%)
+				right: -10px
+			@media (max-width: 375px)
+				right: -6px
+		&_news__details
+			&::after
+				top: 50%
+				transform: translateY(-50%)
+	&__header
+		font-size: 24px
+		min-height: inherit
+		@media (max-width: 480px)
+			font-size: 20px
+		@media (max-width: 425px)
+			font-size: 18px
+		@media (max-width: 375px)
+			font-size: 16px
+	&__description
+		display: none
+		margin-top: 20px
+		@media (max-width: 375px)
+			font-size: 14px
+	&__menu
+		display: grid
+		gap: 16px
+.show-accoreon
+	display: block
+.change-bg
+	background: $accordeonActiveBorder
+.accordeon-active
+	display: grid
+	gap: 16px
+.accordeon-active-icon
+	&::after
+		@include background('icons/accordeon-icon-close.svg')

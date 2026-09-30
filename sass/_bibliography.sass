@@ -1,0 +1,35 @@
+@use 'base/index' as *
+
+.bibliography
+	padding-top: 110px
+	min-height: auto
+	@media (max-width: 991px)
+		padding-top: 64px
+	@media (max-width: 425px)
+		padding-top: 32px
+	&__title
+		position: relative
+		cursor: pointer
+		&::after
+			width: 27px
+			height: 10px
+			@include after(50%, 40%)
+			@include background('icons/arrow-down.svg', contain)
+			transform: translateY(-50%)
+			@media (max-width: 1024px)
+				right: 30%
+			@media (max-width: 576px)
+				right: 20%
+			@media (max-width: 425px)
+				right: 15%
+		&_active
+			&::after
+				transform: translateY(-50%) rotate(-180deg)
+	&__menu
+		padding-left: 15px
+		margin-top: 32px
+		display: none
+		list-style: decimal
+		color: $textSecondColor
+		&_active
+			display: block

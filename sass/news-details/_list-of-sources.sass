@@ -1,0 +1,14 @@
+@use '../base/index' as *
+
+.list__of__sources, .list__of__sources__gradient
+	min-height: auto
+
+.list__of__sources__gradient
+	position: relative
+	&::before
+		width: 100%
+		height: 1000px
+		@include before(-50%, -50%)
+		background: $newsDetailsSectionGradientAfter
+		z-index: -1
+		pointer-events: none

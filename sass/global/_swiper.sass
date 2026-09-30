@@ -1,0 +1,29 @@
+@use '../base/index' as *
+
+.swiper
+	position: relative
+	min-height: 700px
+	@media (max-width: 768px)
+		min-height: 800px
+	@media (max-width: 676px)
+		min-height: 750px
+	@media (max-width: 576px)
+		min-height: 720px
+	@media (max-width: 525px)
+		min-height: 680px
+	@media (max-width: 425px)
+		min-height: 650px
+	&-slide
+		height: unset
+	&__navigation
+		@include universalAbsolute($bottom: 0, $left: 50%)
+		width: 100px
+		height: 25px
+		transform: translateX(-50%)
+	&-button-prev, &-button-next
+		svg
+			display: none
+	&-button-prev
+		@include background('icons/arrow-left.svg')
+	&-button-next
+		@include background('icons/arrow-right.svg')
